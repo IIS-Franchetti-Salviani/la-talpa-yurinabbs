@@ -4,20 +4,27 @@
  */
 package chiappalatalpa;
 
+import javax.swing.JButton;
+
 /**
  *
  * @author bianconi.yurinabil
  */
 public class Interfaccia extends javax.swing.JFrame {
-    
+    private JButton[] buche;
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(Interfaccia.class.getName());
 
     /**
      * Creates new form Interfaccia
      */
     public Interfaccia() {
+        
         initComponents();
+        buche = new JButton[] {jButton1, jButton3, jButton4, jButton5, jButton8, jButton9};
+        Talpa talpa = new Talpa(buche);
+        new Thread(talpa).start(); // fa apparire una talpa appena parte il gioco
     }
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -93,22 +100,6 @@ public class Interfaccia extends javax.swing.JFrame {
      */
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ReflectiveOperationException | javax.swing.UnsupportedLookAndFeelException ex) {
-            logger.log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(() -> new Interfaccia().setVisible(true));
     }
