@@ -28,17 +28,61 @@ public class Interfaccia extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jButton2 = new javax.swing.JButton();
+        jButton6 = new javax.swing.JButton();
+        jButton7 = new javax.swing.JButton();
+        jPanel1 = new javax.swing.JPanel();
+        jButton1 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
+        jButton4 = new javax.swing.JButton();
+        jButton5 = new javax.swing.JButton();
+        jButton8 = new javax.swing.JButton();
+        jButton9 = new javax.swing.JButton();
+
+        jButton2.setText("jButton1");
+
+        jButton6.setText("jButton1");
+
+        jButton7.setText("jButton1");
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jPanel1.setBackground(new java.awt.Color(102, 255, 102));
+        jPanel1.setLayout(null);
+
+        jButton1.setBackground(new java.awt.Color(102, 51, 0));
+        jPanel1.add(jButton1);
+        jButton1.setBounds(60, 240, 100, 90);
+
+        jButton3.setBackground(new java.awt.Color(102, 51, 0));
+        jPanel1.add(jButton3);
+        jButton3.setBounds(60, 60, 100, 90);
+
+        jButton4.setBackground(new java.awt.Color(102, 51, 0));
+        jPanel1.add(jButton4);
+        jButton4.setBounds(250, 60, 100, 90);
+
+        jButton5.setBackground(new java.awt.Color(102, 51, 0));
+        jPanel1.add(jButton5);
+        jButton5.setBounds(250, 240, 100, 90);
+
+        jButton8.setBackground(new java.awt.Color(102, 51, 0));
+        jPanel1.add(jButton8);
+        jButton8.setBounds(440, 60, 100, 90);
+
+        jButton9.setBackground(new java.awt.Color(102, 51, 0));
+        jPanel1.add(jButton9);
+        jButton9.setBounds(440, 240, 100, 90);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -70,5 +114,15 @@ public class Interfaccia extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButton6;
+    private javax.swing.JButton jButton7;
+    private javax.swing.JButton jButton8;
+    private javax.swing.JButton jButton9;
+    private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }
