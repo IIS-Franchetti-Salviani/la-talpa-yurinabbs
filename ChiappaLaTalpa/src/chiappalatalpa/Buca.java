@@ -10,4 +10,7 @@ package chiappalatalpa;
  */
 public class Buca {
     
+    private int id;
+    private Talpa talpaCorrente;
+    private boolean occupata;
 }

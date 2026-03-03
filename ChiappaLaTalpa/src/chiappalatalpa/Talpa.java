@@ -10,4 +10,8 @@ package chiappalatalpa;
  */
 public class Talpa {
     
+    private int valorePunti;
+    private int tempoVisibile;
+    private String tipo;
+    private boolean attiva;
 }

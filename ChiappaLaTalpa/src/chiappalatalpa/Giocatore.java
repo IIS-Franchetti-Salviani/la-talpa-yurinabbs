@@ -3,6 +3,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package chiappalatalpa;
+import java.util.ArrayList;
+import java.util.List;
+import java.io.*;
 
 /**
  *
@@ -10,4 +13,6 @@ package chiappalatalpa;
  */
 public class Giocatore {
     
+    private String nome;
+    private int punteggio;
 }
