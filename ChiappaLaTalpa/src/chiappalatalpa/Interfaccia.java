@@ -101,7 +101,9 @@ public class Interfaccia extends javax.swing.JFrame {
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(() -> new Interfaccia().setVisible(true));
+        Interfaccia frame = new Interfaccia();
+        frame.setSize(1000,600);
+        frame.setVisible(true);
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
