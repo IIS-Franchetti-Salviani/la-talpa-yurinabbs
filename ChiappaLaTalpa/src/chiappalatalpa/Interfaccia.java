@@ -13,6 +13,25 @@ import javax.swing.JButton;
 public class Interfaccia extends javax.swing.JFrame {
     private JButton[] buche;
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(Interfaccia.class.getName());
+    private int punteggio = 0;
+    private Talpa talpa;
+    private void colpisciBuca(JButton b){ //METODO IMPLEMENTATO CON AI
+
+        if(b.getText().equals("🐹")){
+
+            punteggio += 10;
+            b.setText("");
+            b.setBackground(new java.awt.Color(102,51,0));
+
+        }else{
+
+            punteggio -= 5;
+
+        }
+
+        labelPunteggio.setText("Punteggio: " + punteggio);
+
+    }
 
     /**
      * Creates new form Interfaccia
@@ -20,9 +39,11 @@ public class Interfaccia extends javax.swing.JFrame {
     public Interfaccia() {
         
         initComponents();
-        buche = new JButton[] {jButton1, jButton3, jButton4, jButton5, jButton8, jButton9};
-        Talpa talpa = new Talpa(buche);
-        new Thread(talpa).start(); // fa apparire una talpa appena parte il gioco
+        buche = new JButton[] {bottoneBuca1, bottoneBuca2, bottoneBuca3, bottoneBuca4, bottoneBuca5, bottoneBuca6};
+        for (JButton b : buche){
+            b.addActionListener(e -> colpisciBuca(b));
+        }
+        
     }
     
 
@@ -39,12 +60,14 @@ public class Interfaccia extends javax.swing.JFrame {
         jButton6 = new javax.swing.JButton();
         jButton7 = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
-        jButton8 = new javax.swing.JButton();
-        jButton9 = new javax.swing.JButton();
+        bottoneBuca4 = new javax.swing.JButton();
+        bottoneBuca1 = new javax.swing.JButton();
+        bottoneBuca2 = new javax.swing.JButton();
+        bottoneBuca5 = new javax.swing.JButton();
+        bottoneBuca3 = new javax.swing.JButton();
+        bottoneBuca6 = new javax.swing.JButton();
+        bottoneGioca = new javax.swing.JButton();
+        labelPunteggio = new javax.swing.JLabel();
 
         jButton2.setText("jButton1");
 
@@ -57,43 +80,63 @@ public class Interfaccia extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(102, 255, 102));
         jPanel1.setLayout(null);
 
-        jButton1.setBackground(new java.awt.Color(102, 51, 0));
-        jPanel1.add(jButton1);
-        jButton1.setBounds(60, 240, 100, 90);
+        bottoneBuca4.setBackground(new java.awt.Color(102, 51, 0));
+        jPanel1.add(bottoneBuca4);
+        bottoneBuca4.setBounds(60, 240, 100, 90);
 
-        jButton3.setBackground(new java.awt.Color(102, 51, 0));
-        jPanel1.add(jButton3);
-        jButton3.setBounds(60, 60, 100, 90);
+        bottoneBuca1.setBackground(new java.awt.Color(102, 51, 0));
+        jPanel1.add(bottoneBuca1);
+        bottoneBuca1.setBounds(60, 60, 100, 90);
 
-        jButton4.setBackground(new java.awt.Color(102, 51, 0));
-        jPanel1.add(jButton4);
-        jButton4.setBounds(250, 60, 100, 90);
+        bottoneBuca2.setBackground(new java.awt.Color(102, 51, 0));
+        jPanel1.add(bottoneBuca2);
+        bottoneBuca2.setBounds(250, 60, 100, 90);
 
-        jButton5.setBackground(new java.awt.Color(102, 51, 0));
-        jPanel1.add(jButton5);
-        jButton5.setBounds(250, 240, 100, 90);
+        bottoneBuca5.setBackground(new java.awt.Color(102, 51, 0));
+        jPanel1.add(bottoneBuca5);
+        bottoneBuca5.setBounds(250, 240, 100, 90);
 
-        jButton8.setBackground(new java.awt.Color(102, 51, 0));
-        jPanel1.add(jButton8);
-        jButton8.setBounds(440, 60, 100, 90);
+        bottoneBuca3.setBackground(new java.awt.Color(102, 51, 0));
+        jPanel1.add(bottoneBuca3);
+        bottoneBuca3.setBounds(440, 60, 100, 90);
 
-        jButton9.setBackground(new java.awt.Color(102, 51, 0));
-        jPanel1.add(jButton9);
-        jButton9.setBounds(440, 240, 100, 90);
+        bottoneBuca6.setBackground(new java.awt.Color(102, 51, 0));
+        jPanel1.add(bottoneBuca6);
+        bottoneBuca6.setBounds(440, 240, 100, 90);
+
+        bottoneGioca.setText("GIOCA");
+        bottoneGioca.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bottoneGiocaActionPerformed(evt);
+            }
+        });
+        jPanel1.add(bottoneGioca);
+        bottoneGioca.setBounds(560, 130, 100, 40);
+
+        labelPunteggio.setFont(new java.awt.Font("Segoe UI", 0, 21)); // NOI18N
+        labelPunteggio.setText("punteggio: 0");
+        jPanel1.add(labelPunteggio);
+        labelPunteggio.setBounds(560, 170, 140, 29);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 710, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 418, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void bottoneGiocaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bottoneGiocaActionPerformed
+       talpa = new Talpa(buche);
+       Thread t = new Thread(talpa);
+       t.start();
+    }//GEN-LAST:event_bottoneGiocaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -107,15 +150,17 @@ public class Interfaccia extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton bottoneBuca1;
+    private javax.swing.JButton bottoneBuca2;
+    private javax.swing.JButton bottoneBuca3;
+    private javax.swing.JButton bottoneBuca4;
+    private javax.swing.JButton bottoneBuca5;
+    private javax.swing.JButton bottoneBuca6;
+    private javax.swing.JButton bottoneGioca;
     private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
-    private javax.swing.JButton jButton8;
-    private javax.swing.JButton jButton9;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel labelPunteggio;
     // End of variables declaration//GEN-END:variables
 }

@@ -13,34 +13,46 @@ import javax.swing.JButton;
  */
 public class Talpa implements Runnable{
     
-    private int valorePunti;
-    private int tempoVisibile;
-    private String tipo;
-    private boolean attiva;
+    private boolean giocoAttivo;
     private JButton[] buche;
 
     public Talpa(JButton[] buche) {
         this.buche = buche;
+        giocoAttivo = true;
     }
-     @Override
-    public void run() { //METODO IMPLEMENTATO CON AI
-        try {
-            // scegli una buca casuale
-            int index = (int)(Math.random() * buche.length);
+    
+    public void fermaGioco() {
+        giocoAttivo = false;
+    }
+    
+    @Override //METODO IMPLEMENTATO CON AI
+    public void run() {
 
-            // mostra la talpa
-            buche[index].setText("🐹"); // o cambia colore se vuoi
-            buche[index].setBackground(Color.GRAY);
+        while (giocoAttivo) {
 
-            // resta visibile per un tempo casuale 1-3 sec
-            Thread.sleep(1000 + (int)(Math.random() * 2000));
+            try {
 
-            // scompare
-            buche[index].setText("");
-            buche[index].setBackground(new Color(139,69,19)); // torna marrone
+                int index = (int)(Math.random() * buche.length);
 
-        } catch (InterruptedException e) {
-            e.printStackTrace();
+                JButton buca = buche[index];
+
+                // appare
+                buca.setText("🐹");
+                buca.setBackground(Color.GRAY);
+
+                Thread.sleep(1200);
+
+                // sparisce
+                buca.setText("");
+                buca.setBackground(new Color(102,51,0));
+
+                Thread.sleep(800);
+
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+
         }
+
     }
 }
