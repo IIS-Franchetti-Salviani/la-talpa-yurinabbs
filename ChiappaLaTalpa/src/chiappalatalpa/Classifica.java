@@ -12,20 +12,24 @@ import java.io.*;
  */
 public class Classifica {
     
-    private List<String> punteggi;
+    private List<Giocatore> lista;
     
     public Classifica() {
-        punteggi = new ArrayList<>();
+        lista = new ArrayList<>();
     }
     
     public void salvaPunteggio(String nome, int punteggio) {
-        String record = nome + " - " + punteggio;
-        punteggi.add(record);
+        lista.add(new Giocatore(nome,punteggio));
     }
     
     public void stampaClassifica() {
-        for (String s : punteggi) {
-            System.out.println(s);
+        lista.sort((a,b) -> b.getPunteggio() - a.getPunteggio());
+        
+        System.out.println("CLASSIFICA");
+        
+        for(Giocatore g : lista){
+            
+            System.out.println(g.getNome() + " - " + g.getPunteggio());
         }
     }
 }

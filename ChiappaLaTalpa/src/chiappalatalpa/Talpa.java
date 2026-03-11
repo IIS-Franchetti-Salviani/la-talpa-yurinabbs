@@ -13,15 +13,16 @@ import javax.swing.JButton;
  */
 public class Talpa implements Runnable{
     
-    private boolean giocoAttivo;
+    private boolean giocoAttivo = true;
     private JButton[] buche;
+    private int velocita;
 
-    public Talpa(JButton[] buche) {
+    public Talpa(JButton[] buche, int velocita) {
         this.buche = buche;
-        giocoAttivo = true;
+        this.velocita = velocita;
     }
     
-    public void fermaGioco() {
+    public void ferma() {
         giocoAttivo = false;
     }
     
@@ -40,13 +41,13 @@ public class Talpa implements Runnable{
                 buca.setText("🐹");
                 buca.setBackground(Color.GRAY);
 
-                Thread.sleep(1200);
+                Thread.sleep(velocita);
 
                 // sparisce
                 buca.setText("");
                 buca.setBackground(new Color(102,51,0));
 
-                Thread.sleep(800);
+                Thread.sleep(300);
 
             } catch (InterruptedException e) {
                 e.printStackTrace();
